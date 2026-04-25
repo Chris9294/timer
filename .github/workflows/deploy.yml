@@ -28,7 +28,10 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --include=dev
+
+      - name: Verify dependencies
+        run: npm ls @vitejs/plugin-react vite typescript
 
       - name: Build
         run: npm run build
