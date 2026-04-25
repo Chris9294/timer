@@ -181,6 +181,61 @@ function BalloonSvg({
   );
 }
 
+
+function AppleSvg({
+  color,
+  strokeColor = "#263044",
+  size = 64,
+  className,
+}: PatternSvgProps) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M50 28C54 17 63 12 74 13C71 24 62 31 50 28Z"
+        fill="#5CCB5F"
+        stroke={strokeColor}
+        strokeWidth="5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M49 29C48 21 51 15 56 10"
+        stroke={strokeColor}
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M50 32C41 24 24 29 18 43C11 61 22 87 39 88C44 88 47 85 50 85C53 85 56 88 61 88C78 87 89 61 82 43C76 29 59 24 50 32Z"
+        fill={color}
+        stroke={strokeColor}
+        strokeWidth="6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31 45C35 37 43 35 48 38"
+        stroke="#FFFFFF"
+        strokeWidth="5"
+        strokeLinecap="round"
+        opacity="0.5"
+      />
+      <path
+        d="M50 34C47 30 44 29 41 29"
+        stroke={strokeColor}
+        strokeWidth="4"
+        strokeLinecap="round"
+        opacity="0.45"
+      />
+    </svg>
+  );
+}
+
 export const patterns = [
   { id: "heart", label: "Cœurs", Component: HeartSvg },
   { id: "bear", label: "Nounours", Component: BearSvg },
@@ -188,6 +243,7 @@ export const patterns = [
   { id: "star", label: "Étoiles", Component: StarSvg },
   { id: "flower", label: "Fleurs", Component: FlowerSvg },
   { id: "balloon", label: "Ballons", Component: BalloonSvg },
+  { id: "apple", label: "Pommes", Component: AppleSvg },
 ] as const;
 
 export type PatternId = (typeof patterns)[number]["id"];
