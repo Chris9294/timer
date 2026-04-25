@@ -27,7 +27,7 @@ export function FinishCelebration() {
       <div className="finish-card">
         <div className="finish-glow" aria-hidden="true" />
         <AlarmClockSvg className="finish-alarm-svg" />
-        <div className="finish-message">c&apos;est terminé&nbsp;!</div>
+        <div className="finish-message">C&apos;est terminé&nbsp;!</div>
       </div>
     </section>
   );
