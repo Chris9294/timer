@@ -23,14 +23,16 @@ export default function App() {
         isFinished={timer.isFinished}
       />
 
-      <TimerControls
-        isRunning={timer.isRunning}
-        onStart={timer.startTimer}
-        onPause={timer.pauseTimer}
-        onReset={timer.resetTimer}
-        onOpenSettings={() => setIsSettingsOpen(true)}
-      />
-
+     <TimerControls
+  isRunning={isRunning}
+  totalSeconds={totalSeconds}
+  remainingSeconds={remainingSeconds}
+  isFinished={totalSeconds > 0 && remainingSeconds === 0}
+  onStart={start}
+  onPause={pause}
+  onReset={reset}
+  onOpenSettings={() => setIsSettingsOpen(true)}
+/>
       <TimerSettingsModal
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
