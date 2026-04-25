@@ -96,13 +96,9 @@ export function useClassTimer() {
   }, [selectedPatternId, soundEnabled, totalSeconds]);
 
   useEffect(() => {
-    if (isRunning) {
-      return;
-    }
-
     setRemainingSeconds(totalSeconds);
     endSoundAlreadyPlayedRef.current = false;
-  }, [isRunning, totalSeconds]);
+  }, [totalSeconds]);
 
   useEffect(() => {
     if (!isRunning) {
